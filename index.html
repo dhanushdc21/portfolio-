@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhanush D Chandran — DevOps & Platform Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    <div class="nav-dot"></div>
+    <span class="nav-name">dhanush</span><span style="color:var(--text-dim)">@devops</span>
+  </a>
+  <div class="nav-links">
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#skills">stack</a>
+    <a href="#education">education</a>
+    <a href="#contact">contact</a>
+  </div>
+  <a href="mailto:dhanushdchandran@gmail.com" class="nav-resume">$ hire --me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-status">available for devops &amp; platform engineering roles</div>
+    <p class="hero-greeting"><span>~/</span> hello, I'm</p>
+    <h1 class="hero-name">Dhanush D<br><span class="accent">Chandran</span></h1>
+    <p class="hero-title">Platform Engineer · Trivandrum, India</p>
+    <p class="hero-bio">
+      I build <strong>CI/CD pipelines, cloud infrastructure, and security automation</strong> on GCP — things that ship reliably and stay that way. Specialized in infrastructure-as-code, vulnerability remediation, and enterprise observability for multi-cloud SaaS platforms.
+    </p>
+    <div class="hero-chips">
+      <span class="chip highlight">GCP Certified</span>
+      <span class="chip highlight">Terraform Associate</span>
+      <span class="chip">GitHub Actions</span>
+      <span class="chip">Kubernetes</span>
+      <span class="chip">Ansible</span>
+      <span class="chip">Terraform</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-green">view_projects()</a>
+      <a href="#contact" class="btn btn-outline">get_in_touch()</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-section">
+      <img src="assets/images/photo.jpg" alt="Dhanush D Chandran">
+      <div class="hero-photo-overlay"></div>
+      <div class="hero-photo-corner">dhanush.jpg · 2026</div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="stat-cell">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Unscanned artifacts</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">~40%</div>
+        <div class="stat-label">CVE reduction</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Envs in IaC</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">1+yr</div>
+        <div class="stat-label">Production exp.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">experience</div>
+    <h2 class="section-title">Where I've worked</h2>
+  </div>
+  <div class="exp-layout reveal reveal-d1">
+    <div class="exp-tabs">
+      <button class="exp-tab active" onclick="showExp('quantiphi', this)">
+        <span class="exp-tab-company">Quantiphi</span>
+        <span class="exp-tab-period">Jan 2025 – Present</span>
+      </button>
+      <button class="exp-tab" onclick="showExp('tgh', this)">
+        <span class="exp-tab-company">TGH Tech</span>
+        <span class="exp-tab-period">Nov 2023 – Feb 2024</span>
+      </button>
+    </div>
+
+    <div id="exp-quantiphi" class="exp-panel active">
+      <div class="exp-panel-role">Platform Engineer</div>
+      <div class="exp-panel-meta">Quantiphi Analytics Solutions · Trivandrum, India · <span>Jan 2025 – Present</span></div>
+      <ul class="exp-bullets">
+        <li>Designed and operated CI/CD pipelines using GitHub Actions for a GCP-hosted multi-service SaaS platform across four environments (Dev, QA, UAT, Prod), enforcing automated build, test, and deployment gates — zero unscanned or unvalidated artifacts have reached production since rollout.</li>
+        <li>Provisioned and maintained GCP infrastructure including Cloud Run, VPC, IAM, and firewall rules using Terraform, eliminating configuration drift through strict infrastructure-as-code practices.</li>
+        <li>Gained production exposure to containerized workloads on GKE; worked hands-on with Docker, Kubernetes deployments, and Helm-based release management.</li>
+        <li>Automated OS patching, configuration management, and CVE remediation across 30+ cloud workloads using Ansible and Bash scripting, reducing critical vulnerability exposure by 40% through NIST severity triage.</li>
+        <li>Deployed and integrated six enterprise security and observability tools (Wazuh, CrowdStrike, Tanium, ClamAV, SigNoz, GCP SCC) via Ansible playbooks, consolidating threat detection into a unified OpenTelemetry-compatible pipeline.</li>
+        <li>Developed Python and PowerShell scripts to automate server administration and platform operational tasks; accelerated delivery using GitHub Copilot throughout the development lifecycle.</li>
+        <li>Authored audit-ready documentation covering CI/CD configurations, infrastructure controls, and compliance baselines (NIST, ISO 27001, CIS Benchmarks) across an Agile delivery model.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">GitHub Actions</span>
+        <span class="exp-tag">GCP</span>
+        <span class="exp-tag">Terraform</span>
+        <span class="exp-tag">Kubernetes</span>
+        <span class="exp-tag">Ansible</span>
+        <span class="exp-tag">Docker</span>
+        <span class="exp-tag">Helm</span>
+        <span class="exp-tag">Python</span>
+        <span class="exp-tag">OpenTelemetry</span>
+      </div>
+    </div>
+
+    <div id="exp-tgh" class="exp-panel">
+      <div class="exp-panel-role">Backend Developer Intern</div>
+      <div class="exp-panel-meta">TGH Tech · Trivandrum, India · <span>Nov 2023 – Feb 2024</span></div>
+      <ul class="exp-bullets">
+        <li>Served as the sole backend developer on a client-facing product — designed and delivered a full suite of RESTful APIs using Node.js, integrating multiple third-party services from requirements through production release.</li>
+        <li>Independently owned end-to-end cloud deployment on Heroku, managing environment configuration, release pipelines, and post-deployment monitoring with no prior support.</li>
+        <li>Maintained coding standards and collaborated with design, frontend, and client teams throughout the delivery cycle in a fast-moving startup environment.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">Node.js</span>
+        <span class="exp-tag">REST APIs</span>
+        <span class="exp-tag">Heroku</span>
+        <span class="exp-tag">Express.js</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">projects</div>
+    <h2 class="section-title">Production work with measurable outcomes</h2>
+  </div>
+  <div class="projects-grid">
+    <div class="proj-card reveal">
+      <div class="proj-header">
+        <span class="proj-icon">🔒</span>
+        <span class="proj-metric-badge">0 unscanned artifacts</span>
+      </div>
+      <div class="proj-name">Hardened CI/CD for a Multi-Tenant SaaS</div>
+      <p class="proj-desc">Designed the full release pipeline for a GCP-hosted multi-service platform spanning Dev, QA, UAT and Prod. Every artifact passes automated build, test, SAST and container scanning gates before reaching production.</p>
+      <div class="proj-stack">
+        <span>GitHub Actions</span><span>Trivy</span><span>SonarQube</span><span>Helm</span><span>GKE</span><span>GitOps</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal reveal-d1">
+      <div class="proj-header">
+        <span class="proj-icon">🏗</span>
+        <span class="proj-metric-badge">4 envs fully in IaC</span>
+      </div>
+      <div class="proj-name">Terraform-First GCP Platform</div>
+      <p class="proj-desc">Rebuilt environment provisioning around Terraform modules and remote state. Eliminated drift between environments, added review-gated plan/apply in CI, and made every IAM change a pull request instead of a console click.</p>
+      <div class="proj-stack">
+        <span>Terraform</span><span>Cloud Run</span><span>IAM</span><span>VPC</span><span>Secret Manager</span><span>GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal reveal-d2">
+      <div class="proj-header">
+        <span class="proj-icon">🛡</span>
+        <span class="proj-metric-badge">~40% CVE reduction</span>
+      </div>
+      <div class="proj-name">Fleet-Wide CVE Remediation Program</div>
+      <p class="proj-desc">Automated OS patching and CVE remediation across 30+ cloud workloads using Ansible playbooks keyed to NIST severity. Reduced critical exposure by roughly 40% in the first quarter while maintaining change windows.</p>
+      <div class="proj-stack">
+        <span>Ansible</span><span>Bash</span><span>NIST</span><span>CIS</span><span>GCP</span>
+      </div>
+    </div>
+
+    <div class="proj-card reveal reveal-d3">
+      <div class="proj-header">
+        <span class="proj-icon">📡</span>
+        <span class="proj-metric-badge">6 tools unified</span>
+      </div>
+      <div class="proj-name">Unified Security Observability Pipeline</div>
+      <p class="proj-desc">Deployed and integrated Wazuh, CrowdStrike, Tanium, ClamAV, SigNoz, and GCP SCC via Ansible playbooks, consolidating threat detection into a single OpenTelemetry-compatible pipeline for the platform team.</p>
+      <div class="proj-stack">
+        <span>Wazuh</span><span>CrowdStrike</span><span>SigNoz</span><span>OpenTelemetry</span><span>Ansible</span><span>GCP SCC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">stack</div>
+    <h2 class="section-title">Tools &amp; technologies</h2>
+  </div>
+  <div class="skills-layout">
+    <div class="skill-group-card reveal">
+      <div class="skill-group-header"><span class="icon">☁</span> Cloud &amp; Infrastructure</div>
+      <div class="skill-group-body">
+        <span class="skill-badge">GCP</span><span class="skill-badge">AWS</span><span class="skill-badge">Terraform</span><span class="skill-badge">Cloud Run</span><span class="skill-badge">VPC</span><span class="skill-badge">IAM</span><span class="skill-badge">Secret Manager</span><span class="skill-badge">Cloud Logging</span><span class="skill-badge">CloudFormation</span>
+      </div>
+    </div>
+    <div class="skill-group-card reveal reveal-d1">
+      <div class="skill-group-header"><span class="icon">⚙</span> CI/CD &amp; Automation</div>
+      <div class="skill-group-body">
+        <span class="skill-badge">GitHub Actions</span><span class="skill-badge">GitLab CI</span><span class="skill-badge">ArgoCD</span><span class="skill-badge">GitOps</span><span class="skill-badge">Ansible</span><span class="skill-badge">Jenkins</span><span class="skill-badge">REST APIs</span>
+      </div>
+    </div>
+    <div class="skill-group-card reveal reveal-d2">
+      <div class="skill-group-header"><span class="icon">🐳</span> Containers &amp; Orchestration</div>
+      <div class="skill-group-body">
+        <span class="skill-badge">Docker</span><span class="skill-badge">Kubernetes (GKE)</span><span class="skill-badge">Helm</span><span class="skill-badge">Trivy</span>
+      </div>
+    </div>
+    <div class="skill-group-card reveal reveal-d3">
+      <div class="skill-group-header"><span class="icon">🔐</span> Security &amp; Observability</div>
+      <div class="skill-group-body">
+        <span class="skill-badge">SigNoz</span><span class="skill-badge">Wazuh</span><span class="skill-badge">CrowdStrike</span><span class="skill-badge">GCP SCC</span><span class="skill-badge">SonarQube</span><span class="skill-badge">OWASP</span><span class="skill-badge">OpenTelemetry</span>
+      </div>
+    </div>
+    <div class="skill-group-card reveal">
+      <div class="skill-group-header"><span class="icon">💻</span> Languages &amp; Scripting</div>
+      <div class="skill-group-body">
+        <span class="skill-badge">Python</span><span class="skill-badge">Node.js</span><span class="skill-badge">Bash</span><span class="skill-badge">PowerShell</span><span class="skill-badge">YAML</span><span class="skill-badge">Express.js</span>
+      </div>
+    </div>
+    <div class="skill-group-card reveal reveal-d1">
+      <div class="skill-group-header"><span class="icon">📋</span> Standards &amp; Practices</div>
+      <div class="skill-group-body">
+        <span class="skill-badge">NIST</span><span class="skill-badge">ISO 27001</span><span class="skill-badge">CIS Benchmarks</span><span class="skill-badge">Zero-Trust</span><span class="skill-badge">Agile / Scrum</span><span class="skill-badge">GitHub Copilot</span><span class="skill-badge">LLM APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">education</div>
+    <h2 class="section-title">Academic background &amp; certifications</h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-card-type">🎓 degree</div>
+      <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
+      <div class="edu-school">Mar Baselios College of Engineering and Technology · Thiruvananthapuram</div>
+      <div class="edu-meta">2021 – 2025</div>
+      <div class="edu-meta">CGPA: <span>7.86 / 10</span></div>
+    </div>
+    <div class="edu-card reveal reveal-d2">
+      <div class="edu-card-type">🏅 certifications</div>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">Google Associate Cloud Engineer</div>
+          <div style="font-size:0.65rem;color:var(--text-dim);margin-top:2px;">March 2025</div>
+        </div>
+        <div class="cert-issuer">Google Cloud</div>
+      </div>
+      <div class="cert-item">
+        <div>
+          <div class="cert-name">HashiCorp Terraform Associate</div>
+          <div style="font-size:0.65rem;color:var(--text-dim);margin-top:2px;">September 2025</div>
+        </div>
+        <div class="cert-issuer">HashiCorp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">contact</div>
+    <h2 class="section-title">Let's work together</h2>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-terminal reveal">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="tb-dot tb-red"></div>
+          <div class="tb-dot tb-yellow"></div>
+          <div class="tb-dot tb-green"></div>
+          <div class="tb-title">dhanush — zsh</div>
+        </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">❯</span> <span class="t-cmd">cat about.yml</span></div>
+          <div style="margin-top:10px">
+            <span class="t-key">name</span>: <span class="t-str">"Dhanush D Chandran"</span><br>
+            <span class="t-key">role</span>: <span class="t-str">"Platform / DevOps Engineer"</span><br>
+            <span class="t-key">location</span>: <span class="t-str">"Trivandrum, India"</span><br>
+            <span class="t-key">status</span>: <span class="t-val">available</span><br>
+            <span class="t-key">open_to</span>:<br>
+            &nbsp;&nbsp;- <span class="t-str">"DevOps Engineer"</span><br>
+            &nbsp;&nbsp;- <span class="t-str">"Platform Engineer"</span><br>
+            &nbsp;&nbsp;- <span class="t-str">"Cloud Engineer"</span><br>
+            <span class="t-key">primary_cloud</span>: <span class="t-str">"GCP"</span><br>
+            <span class="t-key">certifications</span>:<br>
+            &nbsp;&nbsp;- <span class="t-str">"Google ACE"</span><br>
+            &nbsp;&nbsp;- <span class="t-str">"HashiCorp Terraform Associate"</span>
+          </div>
+          <div style="margin-top:14px">
+            <span class="t-prompt">❯</span> <span class="t-cmd">echo $READY_TO_SHIP</span>
+          </div>
+          <div><span class="t-val">true</span> <span class="t-cursor"></span></div>
+        </div>
+      </div>
+      <div class="contact-links-list">
+        <a href="mailto:dhanushdchandran@gmail.com" class="contact-row">
+          <span class="c-label">Email</span>
+          <span class="c-value">dhanushdchandran@gmail.com</span>
+          <span class="c-arrow">↗</span>
+        </a>
+        <a href="tel:+919497771518" class="contact-row">
+          <span class="c-label">Phone</span>
+          <span class="c-value">+91 94977 71518</span>
+          <span class="c-arrow">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/dhanushdchandran" target="_blank" class="contact-row">
+          <span class="c-label">LinkedIn</span>
+          <span class="c-value">linkedin.com/in/dhanushdchandran</span>
+          <span class="c-arrow">↗</span>
+        </a>
+        <a href="https://github.com/dhanushdc21" target="_blank" class="contact-row">
+          <span class="c-label">GitHub</span>
+          <span class="c-value">github.com/dhanushdc21</span>
+          <span class="c-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form reveal reveal-d2">
+      <div class="terminal" style="display:flex;flex-direction:column;height:100%;min-height:420px;">
+        <div class="terminal-bar">
+          <div class="tb-dot tb-red"></div>
+          <div class="tb-dot tb-yellow"></div>
+          <div class="tb-dot tb-green"></div>
+          <div class="tb-title">dhanush-chat — zsh</div>
+        </div>
+        <div class="terminal-body" id="chat-body" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-bottom:12px;">
+          <div class="chat-output"><span class="t-comment"># Interactive terminal — try: help, hire, email, projects, skills, hello</span></div>
+          <div class="chat-output"><span class="t-prompt">system</span><span class="t-comment"> ~ booted. type a command below ↓</span></div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;gap:8px;background:var(--surface2);">
+          <span class="t-prompt" style="flex-shrink:0;">❯</span>
+          <input id="chat-input" class="form-input" style="background:transparent;border:none;padding:0;font-size:0.78rem;flex:1;outline:none;" placeholder="type a command and press Enter..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">dhanush<span>@devops</span> ~ 2026</div>
+  <div class="footer-copy">built with care · Trivandrum, India</div>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/dhanushdchandran" target="_blank">linkedin</a>
+    <a href="https://github.com/dhanushdc21" target="_blank">github</a>
+    <a href="mailto:dhanushdchandran@gmail.com">email</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

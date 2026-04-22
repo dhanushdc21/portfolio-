@@ -17,7 +17,7 @@
     ].join('\n'), G + 'font-size:9px;line-height:1.2;');
 
     console.log('%c👀  Oops — trying to be a techie and peeking under the hood?', G + 'font-size:15px;');
-    console.log('%cHonestly, respect. This is exactly what I do too.', W);
+    console.log('%cHonestly, respect.', W);  // This is exactly what I do too.
     console.log('%c' + '─'.repeat(60), D);
     console.log('%cStack: Vanilla HTML · CSS · JS  |  No frameworks. Just craft.', B);
     console.log('%cHosted on: Vercel  |  Fonts: JetBrains Mono + Syne (Google Fonts)', B);

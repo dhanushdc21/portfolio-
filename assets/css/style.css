@@ -461,6 +461,7 @@ footer {
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
+<<<<<<< HEAD
 
   #hero {
     grid-template-columns: 1fr;
@@ -498,12 +499,14 @@ footer {
     border-top: 1px solid var(--border);
   }
 
+=======
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 48px 24px; }
+>>>>>>> parent of e1faabd (feat: mobile photo hero with scroll fade)
   section { padding: 56px 24px; }
   .exp-layout { grid-template-columns: 1fr; }
-  .exp-tabs {
-    border-right: none; border-bottom: 1px solid var(--border);
-    margin-bottom: 24px; display: flex; overflow-x: auto;
-  }
+  .exp-tabs { border-right: none; border-bottom: 1px solid var(--border); margin-bottom: 24px; display: flex; overflow-x: auto; }
   .exp-tab { border-right: none; border-bottom: 2px solid transparent; white-space: nowrap; }
   .exp-tab.active { border-right: none; border-bottom-color: var(--green); }
   .exp-panel { padding: 0; }

@@ -461,12 +461,45 @@ footer {
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .hero-left { padding: 48px 24px; }
+
+  #hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55vh auto;
+    padding-top: 56px;
+  }
+
+  .hero-right {
+    display: flex;
+    grid-row: 1;
+    position: fixed;
+    top: 56px; left: 0; right: 0;
+    height: 55vh;
+    z-index: 0;
+    transform-origin: top center;
+    will-change: opacity, transform;
+  }
+
+  .hero-photo-overlay {
+    background: linear-gradient(to top, var(--bg) 0%, rgba(13,17,23,0.3) 60%, transparent 100%);
+  }
+
+  .hero-stats-bar { display: none; }
+
+  .hero-left {
+    grid-row: 2;
+    position: relative;
+    z-index: 1;
+    padding: 32px 24px 56px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
   section { padding: 56px 24px; }
   .exp-layout { grid-template-columns: 1fr; }
-  .exp-tabs { border-right: none; border-bottom: 1px solid var(--border); margin-bottom: 24px; display: flex; overflow-x: auto; }
+  .exp-tabs {
+    border-right: none; border-bottom: 1px solid var(--border);
+    margin-bottom: 24px; display: flex; overflow-x: auto;
+  }
   .exp-tab { border-right: none; border-bottom: 2px solid transparent; white-space: nowrap; }
   .exp-tab.active { border-right: none; border-bottom-color: var(--green); }
   .exp-panel { padding: 0; }

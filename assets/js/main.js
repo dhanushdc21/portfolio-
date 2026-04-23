@@ -17,7 +17,7 @@
     ].join('\n'), G + 'font-size:9px;line-height:1.2;');
 
     console.log('%c👀  Oops — trying to be a techie and peeking under the hood?', G + 'font-size:15px;');
-    console.log('%cHonestly, respect.', W);  // This is exactly what I do too.
+    console.log('%cHonestly, respect. This is exactly what I do too.', W);
     console.log('%c' + '─'.repeat(60), D);
     console.log('%cStack: Vanilla HTML · CSS · JS  |  No frameworks. Just craft.', B);
     console.log('%cHosted on: Vercel  |  Fonts: JetBrains Mono + Syne (Google Fonts)', B);
@@ -129,15 +129,16 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── PHOTO: try local file first, fall back to embedded ───────────────
+// ── PHOTO: load from assets/images/ — only works when served, not file:// ──
 (function() {
   const img = document.querySelector('.hero-photo-section img');
   if (!img) return;
-  const embedded = img.src; // already has base64
+  // Only attempt external load when actually served (http/https), not file://
+  if (location.protocol === 'file:') return; // skip on local file:// — base64 already works
   const local = new Image();
   local.onload = () => { img.src = local.src; };
-  local.onerror = () => {}; // keep base64
-  local.src = 'photo.jpg';
+  local.onerror = () => {}; // keep embedded base64 as fallback
+  local.src = 'assets/images/photo.jpg';
 })();
 
 // ── INTERACTIVE TERMINAL ──────────────────────────────────────────────
@@ -296,3 +297,45 @@ document.getElementById('chat-body')?.addEventListener('click', () => chatInput?
 new IntersectionObserver(entries => {
   if (entries[0].isIntersecting) chatInput?.focus();
 }, { threshold: 0.6 }).observe(document.getElementById('contact'));
+
+// ── MOBILE PHOTO SCROLL FADE ─────────────────────────────────────────
+(function () {
+  function isMobile() { return window.innerWidth <= 900; }
+
+  function handleScroll() {
+    if (!isMobile()) return;
+    const heroRight = document.querySelector('.hero-right');
+    if (!heroRight) return;
+
+    // How far the user has scrolled past the top
+    const scrollY = window.scrollY;
+    const fadeDistance = window.innerHeight * 0.45; // fully gone by ~45vh scroll
+
+    // Opacity: 1 → 0 as scroll goes 0 → fadeDistance
+    const opacity = Math.max(0, 1 - scrollY / fadeDistance);
+
+    // Subtle scale down: 1 → 0.92
+    const scale = 1 - (1 - opacity) * 0.08;
+
+    heroRight.style.opacity = opacity;
+    heroRight.style.transform = `scale(${scale})`;
+  }
+
+  // Only attach on mobile, clean up on resize
+  function init() {
+    if (isMobile()) {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll(); // run once on load
+    } else {
+      const heroRight = document.querySelector('.hero-right');
+      if (heroRight) {
+        heroRight.style.opacity = '';
+        heroRight.style.transform = '';
+      }
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
+
+  init();
+  window.addEventListener('resize', init);
+})();

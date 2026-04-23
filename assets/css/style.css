@@ -485,6 +485,10 @@ footer {
 
   .hero-stats-bar { display: none; }
 
+  .hero-photo-section img {
+    object-position: center 35%;
+  }
+
   .hero-left {
     grid-row: 2;
     position: relative;

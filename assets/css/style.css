@@ -432,6 +432,37 @@ section { padding: 88px 64px; border-top: 1px solid var(--border); }
   letter-spacing: 0.03em;
 }
 
+.proj-card.proj-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.proj-featured-left { }
+.proj-featured-right {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.proj-featured-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(63,185,80,0.03);
+  border: 1px solid rgba(63,185,80,0.1);
+  border-radius: 6px;
+}
+.proj-metric-item { }
+.proj-metric-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem; font-weight: 800;
+  color: var(--green); line-height: 1;
+  margin-bottom: 4px; letter-spacing: -0.02em;
+}
+.proj-metric-lbl {
+  font-size: 0.58rem; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+
 .proj-type-badge {
   font-size: 0.58rem; padding: 2px 8px;
   border: 1px solid rgba(88,166,255,0.22);
@@ -649,6 +680,7 @@ footer {
   .exp-tab.active { border-right: none; border-bottom-color: var(--green); }
   .exp-panel { padding: 0; }
   .projects-grid { grid-template-columns: 1fr; }
+  .proj-card.proj-featured { grid-template-columns: 1fr; gap: 24px; }
   .skills-layout, .edu-grid, .contact-layout { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
 }

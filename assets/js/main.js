@@ -119,15 +119,43 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// ── Active nav on scroll ──────────────────────────────────────────────────────
+// ── Active nav on scroll + scrolled class ─────────────────────────────────────
 const sections = document.querySelectorAll('section[id]');
+const navEl = document.querySelector('nav');
 window.addEventListener('scroll', () => {
+  navEl.classList.toggle('nav-scrolled', window.scrollY > 20);
   let cur = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
 });
+
+// ── Stat count-up animation ───────────────────────────────────────────────────
+(function () {
+  function countUp(el, end, prefix, suffix, duration) {
+    let start = null;
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+    function tick(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / duration, 1);
+      el.textContent = prefix + Math.round(end * easeOut(p)) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const defs = [
+    null,
+    { prefix: '~', end: 40, suffix: '%' },
+    { prefix: '', end: 4, suffix: '' },
+    { prefix: '', end: 1, suffix: '+yr' },
+  ];
+  setTimeout(() => {
+    document.querySelectorAll('.stat-value').forEach((el, i) => {
+      if (defs[i]) countUp(el, defs[i].end, defs[i].prefix, defs[i].suffix, 900 + i * 120);
+    });
+  }, 560);
+})();
 
 // ── PHOTO: try local file first, fall back to embedded ───────────────
 (function() {
@@ -144,16 +172,21 @@ window.addEventListener('scroll', () => {
 const COMMANDS = {
   help: () => [
     { t:'comment', v:'# available commands:' },
-    { t:'key', v:'  hello     ', s:'→ say hi' },
-    { t:'key', v:'  hire      ', s:'→ how to reach me' },
-    { t:'key', v:'  email     ', s:'→ open email client directly' },
-    { t:'key', v:'  linkedin  ', s:'→ open my LinkedIn' },
-    { t:'key', v:'  github    ', s:'→ open my GitHub' },
-    { t:'key', v:'  projects  ', s:'→ what I\'ve built' },
-    { t:'key', v:'  skills    ', s:'→ my tech stack' },
-    { t:'key', v:'  about     ', s:'→ who I am' },
-    { t:'key', v:'  status    ', s:'→ availability' },
-    { t:'key', v:'  clear     ', s:'→ clear the terminal' },
+    { t:'key', v:'  hello      ', s:'→ say hi' },
+    { t:'key', v:'  hire       ', s:'→ how to reach me' },
+    { t:'key', v:'  email      ', s:'→ open email client directly' },
+    { t:'key', v:'  linkedin   ', s:'→ open my LinkedIn' },
+    { t:'key', v:'  github     ', s:'→ open my GitHub' },
+    { t:'key', v:'  projects   ', s:'→ what I\'ve built' },
+    { t:'key', v:'  skills     ', s:'→ my tech stack' },
+    { t:'key', v:'  about      ', s:'→ who I am' },
+    { t:'key', v:'  status     ', s:'→ availability' },
+    { t:'key', v:'  neofetch   ', s:'→ system info' },
+    { t:'key', v:'  resume     ', s:'→ how to get my CV' },
+    { t:'key', v:'  tree       ', s:'→ portfolio structure' },
+    { t:'key', v:'  ping       ', s:'→ check connectivity' },
+    { t:'key', v:'  uptime     ', s:'→ time in production' },
+    { t:'key', v:'  clear      ', s:'→ clear the terminal' },
     { t:'comment', v:'# tip: ↑↓ for history · Tab to autocomplete' },
   ],
   hello: () => [
@@ -219,12 +252,75 @@ const COMMANDS = {
     { t:'output', v:'Actively looking for DevOps / Platform / Cloud Engineering roles.' },
     { t:'output', v:'Type "hire" to get started.' },
   ],
+  neofetch: () => {
+    const months = Math.floor((Date.now() - new Date('2025-01-01')) / (1000*60*60*24*30));
+    return [
+      { t:'val',     v:'        dhanush@platform' },
+      { t:'comment', v:'        ─────────────────────────────────' },
+      { t:'key',     v:'        OS         ', s:'Trivandrum, India · UTC+5:30' },
+      { t:'key',     v:'        Host       ', s:'Quantiphi Analytics Solutions' },
+      { t:'key',     v:'        Role       ', s:'Platform / DevOps Engineer' },
+      { t:'key',     v:'        Shell      ', s:'bash · zsh · powershell' },
+      { t:'key',     v:'        Cloud      ', s:'GCP (Google ACE ✓)' },
+      { t:'key',     v:'        IaC        ', s:'Terraform (HashiCorp ✓)' },
+      { t:'key',     v:'        CI/CD      ', s:'GitHub Actions → ArgoCD' },
+      { t:'key',     v:'        Security   ', s:'Wazuh · CrowdStrike · SigNoz' },
+      { t:'key',     v:'        Uptime     ', s:`${months}mo · 0 production incidents` },
+      { t:'comment', v:'        ─────────────────────────────────' },
+    ];
+  },
+  resume: () => [
+    { t:'output',  v:'resume.pdf is not publicly hosted.' },
+    { t:'output',  v:'Request a copy via:' },
+    { t:'key',     v:'  email    ', s:'→ dhanushdchandran@gmail.com' },
+    { t:'key',     v:'  linkedin ', s:'→ linkedin.com/in/dhanushdchandran' },
+    { t:'comment', v:'# subject: "Resume Request" — replies within 24h' },
+  ],
+  ping: () => [
+    { t:'comment', v:'PING dhanush@platform: 56 data bytes' },
+    { t:'output',  v:'64 bytes: icmp_seq=0 ttl=64 time=1.2 ms' },
+    { t:'output',  v:'64 bytes: icmp_seq=1 ttl=64 time=0.9 ms' },
+    { t:'output',  v:'64 bytes: icmp_seq=2 ttl=64 time=1.1 ms' },
+    { t:'val',     v:'--- ping statistics ---' },
+    { t:'output',  v:'3 packets tx, 3 received, 0% packet loss' },
+    { t:'comment', v:'# available for hire — latency: ~24h response' },
+  ],
+  uptime: () => {
+    const start = new Date('2025-01-01');
+    const ms = Date.now() - start;
+    const days = Math.floor(ms / 86400000);
+    const months = Math.floor(days / 30);
+    return [
+      { t:'val',    v:`up ${months} months, ${days % 30} days` },
+      { t:'output', v:'load avg: shipping, learning, building' },
+      { t:'comment',v:'# 0 unscanned artifacts · 0 production fires' },
+    ];
+  },
+  tree: () => [
+    { t:'val',    v:'portfolio/' },
+    { t:'output', v:'├── experience/' },
+    { t:'output', v:'│   ├── quantiphi/       (Jan 2025 → Present)' },
+    { t:'output', v:'│   └── tgh-tech/        (Nov 2023 → Feb 2024)' },
+    { t:'output', v:'├── projects/' },
+    { t:'output', v:'│   ├── cicd-pipeline/   [0 unscanned artifacts]' },
+    { t:'output', v:'│   ├── cve-remediation/ [~40% reduction]' },
+    { t:'output', v:'│   └── observability/   [6 tools unified]' },
+    { t:'output', v:'├── skills/              [cloud, cicd, containers, security]' },
+    { t:'output', v:'├── education/' },
+    { t:'output', v:'│   ├── btech-cse.md     [CGPA 7.86]' },
+    { t:'output', v:'│   └── certs/           [Google ACE · Terraform]' },
+    { t:'output', v:'└── contact.yml          [status: available]' },
+  ],
   clear: () => '__clear__',
   whoami:  'about',
   contact: 'hire',
+  cv: 'resume',
+  fetch: 'neofetch',
   ls:   () => [{ t:'output', v:'experience/  projects/  skills/  education/  contact/' }],
   pwd:  () => [{ t:'output', v:'/home/dhanush/portfolio' }],
   date: () => [{ t:'output', v: new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}) + ' IST' }],
+  echo: () => [{ t:'output', v:'$READY_TO_SHIP=true · $OPEN_TO_WORK=true' }],
+  cat:  () => [{ t:'comment', v:'# try: cat about.yml  →  type "about" instead' }],
 };
 
 function escH(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }

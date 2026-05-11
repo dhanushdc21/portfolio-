@@ -224,11 +224,13 @@ const COMMANDS = {
     return [{ t:'val', v:'opening GitHub → github.com/dhanushdc21' }];
   },
   projects: () => [
-    { t:'comment', v:'# production work, 2025:' },
+    { t:'comment', v:'# work projects, 2025:' },
     { t:'key', v:'  [1] ', s:'Hardened CI/CD — 0 unscanned artifacts in prod' },
     { t:'key', v:'  [2] ', s:'Terraform-first GCP — 4 envs fully in IaC' },
-    { t:'key', v:'  [3] ', s:'CVE remediation — ~40% critical reduction' },
+    { t:'key', v:'  [3] ', s:'CVE remediation — ~40% critical exposure cut' },
     { t:'key', v:'  [4] ', s:'Unified observability — 6 tools → 1 pipeline' },
+    { t:'comment', v:'# personal project:' },
+    { t:'key', v:'  [5] ', s:'GCP K8s Prod Sim — $0 overnight · 22 deployments' },
     { t:'comment', v:'# scroll up to see full case studies ↑' },
   ],
   skills: () => [

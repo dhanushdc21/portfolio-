@@ -382,7 +382,7 @@ section { padding: 88px 64px; border-top: 1px solid var(--border); }
 #projects { background: var(--surface); }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 .proj-card {
@@ -431,6 +431,23 @@ section { padding: 88px 64px; border-top: 1px solid var(--border); }
   background: var(--surface);
   letter-spacing: 0.03em;
 }
+
+.proj-type-badge {
+  font-size: 0.58rem; padding: 2px 8px;
+  border: 1px solid rgba(88,166,255,0.22);
+  border-radius: 10px; color: var(--blue);
+  background: rgba(88,166,255,0.06);
+  letter-spacing: 0.04em;
+}
+.proj-github-link {
+  display: inline-block;
+  font-size: 0.67rem; color: var(--blue);
+  text-decoration: none; margin-top: 18px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(88,166,255,0.2);
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.proj-github-link:hover { color: var(--text); border-bottom-color: var(--text-dim); }
 
 /* SKILLS */
 #skills { background: var(--bg); }
@@ -613,9 +630,6 @@ footer {
 @keyframes fadeIn { to { opacity: 1; } }
 
 /* RESPONSIVE */
-@media (max-width: 1100px) {
-  .projects-grid { grid-template-columns: 1fr 1fr; }
-}
 
 @media (max-width: 900px) {
   nav { padding: 0 20px; }

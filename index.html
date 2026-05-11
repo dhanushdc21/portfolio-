@@ -63,7 +63,7 @@
       </div>
       <div class="stat-cell">
         <div class="stat-value">~40%</div>
-        <div class="stat-label">CVE reduction</div>
+        <div class="stat-label">Critical exposure cut</div>
       </div>
       <div class="stat-cell">
         <div class="stat-value">4</div>
@@ -142,7 +142,7 @@
 <section id="projects">
   <div class="section-header reveal">
     <div class="section-eyebrow">projects</div>
-    <h2 class="section-title">Production work with measurable outcomes</h2>
+    <h2 class="section-title">Projects with measurable outcomes</h2>
   </div>
   <div class="projects-grid">
     <div class="proj-card reveal">
@@ -160,7 +160,7 @@
     <div class="proj-card reveal reveal-d1">
       <div class="proj-header">
         <span class="proj-icon">🛡</span>
-        <span class="proj-metric-badge">~40% CVE reduction</span>
+        <span class="proj-metric-badge">~40% critical exposure cut</span>
       </div>
       <div class="proj-name">Fleet-Wide CVE Remediation Program</div>
       <p class="proj-desc">Automated OS patching and CVE remediation across 30+ cloud workloads using Ansible playbooks keyed to NIST severity. Reduced critical exposure by roughly 40% in the first quarter while maintaining change windows.</p>
@@ -179,6 +179,22 @@
       <div class="proj-stack">
         <span>Wazuh</span><span>CrowdStrike</span><span>SigNoz</span><span>OpenTelemetry</span><span>Ansible</span><span>GCP SCC</span>
       </div>
+    </div>
+
+    <div class="proj-card reveal reveal-d1">
+      <div class="proj-header">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="proj-icon">☸️</span>
+          <span class="proj-type-badge">personal project</span>
+        </div>
+        <span class="proj-metric-badge">$0 overnight · 22 deployments</span>
+      </div>
+      <div class="proj-name">GCP Kubernetes Production Simulator</div>
+      <p class="proj-desc">Built a production-style GKE environment from scratch — no managed shortcuts. Custom e2-micro NAT gateway (vs $32/mo Cloud NAT), Workload Identity Federation for keyless GitHub Actions auth, External Secrets Operator syncing from Secret Manager, spot node pools scaling 0→3 at 70% savings, and GKE Managed Prometheus with a custom Cloud Monitoring dashboard. Nightly teardown via GitHub Actions keeps it at ~$1/day with $0 overnight cost.</p>
+      <div class="proj-stack">
+        <span>Terraform</span><span>GKE</span><span>GitHub Actions</span><span>Helm</span><span>External Secrets</span><span>Workload Identity</span><span>Cloud Monitoring</span><span>BigQuery</span><span>FastAPI</span>
+      </div>
+      <a href="https://github.com/dhanushdc21/gcp-k8s-production-sim" target="_blank" class="proj-github-link">github.com/dhanushdc21/gcp-k8s-production-sim ↗</a>
     </div>
   </div>
 </section>

@@ -142,7 +142,7 @@
 <section id="projects">
   <div class="section-header reveal">
     <div class="section-eyebrow">projects</div>
-    <h2 class="section-title">Projects with measurable outcomes</h2>
+    <h2 class="section-title">Production work with measurable outcomes</h2>
   </div>
   <div class="projects-grid">
     <div class="proj-card reveal">
@@ -181,33 +181,42 @@
       </div>
     </div>
 
-    <div class="proj-card proj-featured reveal">
-      <div class="proj-header">
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="proj-icon">☸️</span>
-          <span class="proj-type-badge">personal project</span>
+  </div>
+</section>
+
+<!-- PERSONAL PROJECTS -->
+<section id="personal-projects">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">personal projects</div>
+    <h2 class="section-title">Built to understand, not just to use</h2>
+  </div>
+  <div class="pp-card reveal reveal-d1">
+    <div class="pp-card-left">
+      <div class="pp-card-header">
+        <span style="font-size:1.3rem">☸️</span>
+        <a href="https://github.com/dhanushdc21/gcp-k8s-production-sim" target="_blank" class="proj-github-link">github.com/dhanushdc21/gcp-k8s-production-sim ↗</a>
+      </div>
+      <div class="pp-name">GCP Kubernetes Production Simulator</div>
+      <p class="proj-desc">Built a production-style GKE environment from scratch — no managed shortcuts. Custom e2-micro NAT gateway instead of Cloud NAT ($32/mo), Workload Identity Federation for keyless GitHub Actions auth, External Secrets Operator syncing from Secret Manager, spot node pools scaling 0→3 at 70% savings, and GKE Managed Prometheus with a custom Cloud Monitoring dashboard. Log sink routes ERROR logs to BigQuery for long-term analysis. Nightly teardown via GitHub Actions keeps it at ~$1/day with $0 overnight.</p>
+    </div>
+    <div class="pp-card-right">
+      <div class="pp-metrics">
+        <div class="pp-metric-item">
+          <div class="pp-metric-val">$0</div>
+          <div class="pp-metric-lbl">overnight cost</div>
+        </div>
+        <div class="pp-metric-item">
+          <div class="pp-metric-val">22</div>
+          <div class="pp-metric-lbl">deployments</div>
+        </div>
+        <div class="pp-metric-item">
+          <div class="pp-metric-val">12m</div>
+          <div class="pp-metric-lbl">full restore</div>
         </div>
       </div>
-      <div class="proj-name">GCP Kubernetes Production Simulator</div>
-      <div class="proj-featured-metrics">
-        <div class="proj-metric-item">
-          <div class="proj-metric-val">$0</div>
-          <div class="proj-metric-lbl">overnight</div>
-        </div>
-        <div class="proj-metric-item">
-          <div class="proj-metric-val">22</div>
-          <div class="proj-metric-lbl">deployments</div>
-        </div>
-        <div class="proj-metric-item">
-          <div class="proj-metric-val">12m</div>
-          <div class="proj-metric-lbl">restore time</div>
-        </div>
+      <div class="proj-stack" style="margin-top:20px;">
+        <span>Terraform</span><span>GKE</span><span>GitHub Actions</span><span>Helm</span><span>External Secrets</span><span>Workload Identity</span><span>Cloud Monitoring</span><span>BigQuery</span><span>FastAPI</span>
       </div>
-      <p class="proj-desc">Built a production-style GKE environment from scratch. Custom NAT gateway, Workload Identity Federation for keyless auth, External Secrets Operator, spot node pools at 70% savings, nightly teardown via GitHub Actions.</p>
-      <div class="proj-stack">
-        <span>Terraform</span><span>GKE</span><span>GitHub Actions</span><span>Helm</span><span>Workload Identity</span><span>ESO</span><span>Cloud Monitoring</span><span>FastAPI</span>
-      </div>
-      <a href="https://github.com/dhanushdc21/gcp-k8s-production-sim" target="_blank" class="proj-github-link">github.com/dhanushdc21/gcp-k8s-production-sim ↗</a>
     </div>
   </div>
 </section>

@@ -382,7 +382,7 @@ section { padding: 88px 64px; border-top: 1px solid var(--border); }
 #projects { background: var(--surface); }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 .proj-card {
@@ -433,20 +433,13 @@ section { padding: 88px 64px; border-top: 1px solid var(--border); }
 }
 
 .proj-card.proj-featured {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.proj-featured-left { }
-.proj-featured-right {
-  display: flex; flex-direction: column; gap: 20px;
+  grid-column: 2 / 3;
 }
 .proj-featured-metrics {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  padding: 16px 20px;
+  gap: 8px;
+  margin: 14px 0 18px;
+  padding: 12px 16px;
   background: rgba(63,185,80,0.03);
   border: 1px solid rgba(63,185,80,0.1);
   border-radius: 6px;
@@ -454,13 +447,13 @@ section { padding: 88px 64px; border-top: 1px solid var(--border); }
 .proj-metric-item { }
 .proj-metric-val {
   font-family: 'Syne', sans-serif;
-  font-size: 1.4rem; font-weight: 800;
+  font-size: 1.3rem; font-weight: 800;
   color: var(--green); line-height: 1;
   margin-bottom: 4px; letter-spacing: -0.02em;
 }
 .proj-metric-lbl {
-  font-size: 0.58rem; color: var(--text-dim);
-  text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: 0.55rem; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.08em;
 }
 
 .proj-type-badge {
@@ -680,7 +673,7 @@ footer {
   .exp-tab.active { border-right: none; border-bottom-color: var(--green); }
   .exp-panel { padding: 0; }
   .projects-grid { grid-template-columns: 1fr; }
-  .proj-card.proj-featured { grid-template-columns: 1fr; gap: 24px; }
+  .proj-card.proj-featured { grid-column: 1; }
   .skills-layout, .edu-grid, .contact-layout { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
 }
